@@ -34,30 +34,17 @@
   </section>
   <section class="widget">
     <p>This widget uses the rockPaperScissors function</p>
-    <select>
-      <option>rock</option>
-      <option>paper</option>
-      <option>scissors</option>
-    </select>
-    <select>
-      <option>rock</option>
-      <option>paper</option>
-      <option>scissors</option>
-    </select>
-    <div>select your tools...</div>
-  </section>
-  <section class="widget">
-    <p>This widget uses the rockPaperScissors function</p>
     <input />
     <input />
     <div>type your tools...</div>
   </section>
   <!-- widgets end -->
   <script>
-    // In CHALLENGES 1-8 you will write some JavaScript functions, edit the HTML and improve the CSS of this document
+    // In CHALLENGES 1-6 you will write JavaScript functions
+    // In CHALLENGE 7 you will edit the HTML to add some missing id attributes
 
     // ❗ Functions are scaffolded for you, but are missing their parameters and bodies
-    // ❗ Do not rename the functions provided, and do not create other scripts in this document
+    // ❗ Do not rename the functions provided, and do not create any other script tags
     // ❗ Debug properly using the Console
 
     // 👉 CHALLENGE 1
@@ -114,7 +101,7 @@
     }
 
     // 👉 CHALLENGE 6
-    function rockPaperScissors(tool1, tool2) {
+    function rockPaperScissors() {
       // 🧠 rockPaperScissors takes two arguments tool1 and tool2 which are strings,
       //    and the desired values for these strings are 'rock' or 'paper' or 'scissors'
       //    * If tool1 beats tool2, return the string "<tool1> beats <tool2>!", E.G. "rock beats scissors!"
@@ -126,19 +113,13 @@
       //    * If one tool is invalid, return the string "<tool> not a valid tool", E.G. "ROCK not a valid tool"
     }
 
-    // 👉 CHALLENGE 7 ❗ this is an HTML task so it is not tested automatically
+    // 👉 CHALLENGE 7
     // 🧠 Three of the functions implemented above are being used to display some widgets on the web page
-    // However, nine crucial HTML elements are missing an id attribute that would allow the JavaScript code to find them
+    // However, six crucial HTML elements are missing an id attribute that would allow the JavaScript code to find them
     // Visit the following website: `https://bloominstituteoftechnology.github.io/S1M1_sprint_challenge/`
-    // Use Chrome Dev Tools/Elements tab to find the missing ids, and add them to the corresponding HTML elements in this document
-
-    // 👉 CHALLENGE 8 ❗ this is a CSS task so it is not tested automatically
-    // 🧠 The styling and accessibility of this page leaves something to be desired!
-    // Add CSS rules and any HTML required to make the page more usable and atractive
-    // Here are some suggestions:
-    //    * Add labels and placeholders to input boxes so they are more accessible to screen readers
-    //    * Experiment with different font types, font sizes/styles, colors, paddings, margins
-    //    * Experiment with different kinds of borders, image backgrounds, hover animations
+    //    * Interact with the site to see the widgets in action
+    //    * Use Chrome Dev Tools/Elements tab to find the missing ids
+    //    * Add the missing ids to the corresponding HTML elements in this document and make the widgets work
 
     // 🧪 TESTS, do not work below this line
     // 🧪 TESTS, do not work below this line
@@ -219,6 +200,7 @@
       [['rock', 'paper'], "paper beats rock!"],
       [['paper', 'scissors'], "scissors beats paper!"],
     ])
+    console.log('\nCHALLENGE 7 does not have auto tests')
     function runTests(testName, func, tests) {
       let results = []
       tests.forEach(test => {
@@ -245,14 +227,12 @@
     }, 1000)
     try {
       const game = (tool1, tool2, message) => () => {
-        message.textContent = rockPaperScissors(tool1.value, tool2.value)
+        message.textContent = rockPaperScissors(tool1.value.trim(), tool2.value.trim())
       }
-      toolSelectA.onchange = game(toolSelectA, toolSelectB, rps1)
-      toolSelectB.onchange = game(toolSelectA, toolSelectB, rps1)
-      toolInputA.oninput = game(toolInputA, toolInputB, rps2)
-      toolInputB.oninput = game(toolInputA, toolInputB, rps2)
-      battery.onchange = () => {
-        message.textContent = advancedBatteryCare(Number(battery.value))
+      inputTool1.oninput = game(inputTool1, inputTool2, rps)
+      inputTool2.oninput = game(inputTool1, inputTool2, rps)
+      sliderBattery.onchange = () => {
+        infoBattery.textContent = advancedBatteryCare(Number(sliderBattery.value))
       }
     } catch { }
   </script>
