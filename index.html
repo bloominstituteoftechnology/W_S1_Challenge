@@ -223,7 +223,7 @@
         const date = new Date
         const secs = date.getSeconds() + (60 * date.getMinutes()) + (60 * 60 * date.getHours())
         time.textContent = timeConverter(secs)
-      } catch { }
+      } catch (err) { console.error(err.stack) }
     }, 1000)
     try {
       const game = (tool1, tool2, message) => () => {
@@ -234,7 +234,7 @@
       sliderBattery.onchange = () => {
         infoBattery.textContent = advancedBatteryCare(Number(sliderBattery.value))
       }
-    } catch { }
+    } catch (err) { console.error(err.stack) }
   </script>
 </body>
 
