@@ -39,7 +39,8 @@
     <div>type your tools...</div>
   </section>
   <!-- widgets end -->
-  <script>
+
+  <script id="challenge">
     // In CHALLENGES 1-6 you will write JavaScript functions
     // In CHALLENGE 7 you will edit the HTML to add some missing id attributes
 
@@ -121,9 +122,10 @@
     //    * Use Chrome Dev Tools/Elements tab to find the missing ids
     //    * Add the missing ids to the corresponding HTML elements in this document and make the widgets work
 
-    // 🧪 TESTS, do not work below this line
-    // 🧪 TESTS, do not work below this line
-    // 🧪 TESTS, do not work below this line
+    // 🧪 TESTS, do not make any changes below this line ===================
+    // 🧪 TESTS, do not make any changes below this line ===================
+    // 🧪 TESTS, do not make any changes below this line ===================
+    globalThis.challengeVersion = 1
     globalThis.concatenator = concatenator
     globalThis.triangleAnalyzer = triangleAnalyzer
     globalThis.falsinessDetector = falsinessDetector
@@ -131,101 +133,101 @@
     globalThis.timeConverter = timeConverter
     globalThis.rockPaperScissors = rockPaperScissors
 
-    runTests('CHALLENGE 1 - concatenator', concatenator, [
-      [[], 'a and b must be defined'],
-      [[1], 'a and b must be defined'],
-      [[1, 'a'], 'a and b must be of the same type'],
-      [['a', 1], 'a and b must be of the same type'],
-      [[true, false], 'a and b must be numbers or strings'],
-      [[null, null], 'a and b must be numbers or strings'],
-      [['toyota', ' camry'], 'toyota camry'],
-      [[3, 5], 8],
-      [[3, -5], -2],
-    ])
-    runTests('CHALLENGE 2 - triangleAnalyzer', triangleAnalyzer, [
-      [[], 'all angles must be numbers'],
-      [['90', '60', '30'], 'all angles must be numbers'],
-      [[90, 60, '30'], 'all angles must be numbers'],
-      [[0, 0, 180], 'all angles must be greater than zero'],
-      [[-180, 180, 180], 'all angles must be greater than zero'],
-      [[90, 60, 31], 'angles must total 180'],
-      [[90, 60, 29], 'angles must total 180'],
-      [[90, 60, 30], 'this is a right triangle'],
-      [[45, 45, 90], 'this is a right triangle'],
-      [[35, 90, 55], 'this is a right triangle'],
-      [[91, 60, 29], 'this is an obtuse triangle'],
-      [[40, 45, 95], 'this is an obtuse triangle'],
-      [[25, 100, 55], 'this is an obtuse triangle'],
-      [[60, 60, 60], 'this is an acute triangle'],
-    ])
-    runTests('CHALLENGE 3 - falsinessDetector', falsinessDetector, [
-      [[1, '2', true, '0', ' '], 'all values truthy'],
-      [[-1, '2', !false, '0', '-0'], 'all values truthy'],
-      [[0, -0, false, '', false], 'all values falsy'],
-      [[2 - 2, -0, !true, '' + '', !!false], 'all values falsy'],
-      [[0, -0, false, '', ' '], 'some values truthy and some falsy'],
-      [[5, -0, !true, ' ', '0'], 'some values truthy and some falsy'],
-    ])
-    runTests('CHALLENGE 4 - advancedBatteryCare', advancedBatteryCare, [
-      [[0], 'congrats, battery dead'],
-      [[100], 'congrats, you cooked your battery'],
-      [[19], 'please connect charger'],
-      [[81], 'please unplug charger'],
-      [[20], 'your battery is at 20%'],
-      [[50], 'your battery is at 50%'],
-      [[80], 'your battery is at 80%'],
-    ])
-    runTests('CHALLENGE 5 - timeConverter', timeConverter, [
-      [[56828], "15:47:08"],
-      [[0], "00:00:00"],
-      [[1], "00:00:01"],
-      [[59], "00:00:59"],
-      [[60], "00:01:00"],
-      [[119], "00:01:59"],
-      [[120], "00:02:00"],
-      [[3599], "00:59:59"],
-      [[86399], "23:59:59"],
-    ])
-    runTests('CHALLENGE 6 - rockPaperScissors', rockPaperScissors, [
-      [['x', 'y'], "both tools invalid"],
-      [['x', 'paper'], "x not a valid tool"],
-      [['rock', 'y'], "y not a valid tool"],
-      [['rock', 'rock'], "rock VS. rock is a draw!"],
-      [['paper', 'paper'], "paper VS. paper is a draw!"],
-      [['scissors', 'scissors'], "scissors VS. scissors is a draw!"],
-      [['rock', 'scissors'], "rock beats scissors!"],
-      [['paper', 'rock'], "paper beats rock!"],
-      [['scissors', 'paper'], "scissors beats paper!"],
-      [['scissors', 'rock'], "rock beats scissors!"],
-      [['rock', 'paper'], "paper beats rock!"],
-      [['paper', 'scissors'], "scissors beats paper!"],
-    ])
-    console.log('\nCHALLENGE 7 does not have auto tests')
-    function runTests(testName, func, tests) {
-      let results = []
-      tests.forEach(test => {
-        const argsList = test[0]
-        const expected = JSON.stringify(test[1])
-        const actual = JSON.stringify(func.apply(null, argsList))
-        results.push([argsList, expected, actual])
-      })
-      console.log('\n' + testName)
-      if (results.every(result => result[1] === result[2])) console.log('\t✅ All tests pass')
-      else if (results.every(result => result[1] !== result[2])) console.log('\t❌ All tests fail')
-      else results.forEach((result, idx) => {
-        if (result[1] === result[2]) console.log(`\t✅ Test ${idx + 1} passes`)
-        else console.log(`\t❌ Test ${idx + 1} fails: ${func.name}(${result[0]
-          .map(JSON.stringify)}) should return ${result[1]} but returns ${result[2]}`)
-      })
-    }
-    setInterval(() => {
-      try {
-        const date = new Date
-        const secs = date.getSeconds() + (60 * date.getMinutes()) + (60 * 60 * date.getHours())
-        time.textContent = timeConverter(secs)
-      } catch (err) { console.error(err.stack) }
-    }, 1000)
     try {
+      runTests('CHALLENGE 1 - concatenator', concatenator, [
+        [[], 'a and b must be defined'],
+        [[1], 'a and b must be defined'],
+        [[1, 'a'], 'a and b must be of the same type'],
+        [['a', 1], 'a and b must be of the same type'],
+        [[true, false], 'a and b must be numbers or strings'],
+        [[null, null], 'a and b must be numbers or strings'],
+        [['toyota', ' camry'], 'toyota camry'],
+        [[3, 5], 8],
+        [[3, -5], -2],
+      ])
+      runTests('CHALLENGE 2 - triangleAnalyzer', triangleAnalyzer, [
+        [[], 'all angles must be numbers'],
+        [['90', '60', '30'], 'all angles must be numbers'],
+        [[90, 60, '30'], 'all angles must be numbers'],
+        [[0, 0, 180], 'all angles must be greater than zero'],
+        [[-180, 180, 180], 'all angles must be greater than zero'],
+        [[90, 60, 31], 'angles must total 180'],
+        [[90, 60, 29], 'angles must total 180'],
+        [[90, 60, 30], 'this is a right triangle'],
+        [[45, 45, 90], 'this is a right triangle'],
+        [[35, 90, 55], 'this is a right triangle'],
+        [[91, 60, 29], 'this is an obtuse triangle'],
+        [[40, 45, 95], 'this is an obtuse triangle'],
+        [[25, 100, 55], 'this is an obtuse triangle'],
+        [[60, 60, 60], 'this is an acute triangle'],
+      ])
+      runTests('CHALLENGE 3 - falsinessDetector', falsinessDetector, [
+        [[1, '2', true, '0', ' '], 'all values truthy'],
+        [[-1, '2', !false, '0', '-0'], 'all values truthy'],
+        [[0, -0, false, '', false], 'all values falsy'],
+        [[2 - 2, -0, !true, '' + '', !!false], 'all values falsy'],
+        [[0, -0, false, '', ' '], 'some values truthy and some falsy'],
+        [[5, -0, !true, ' ', '0'], 'some values truthy and some falsy'],
+      ])
+      runTests('CHALLENGE 4 - advancedBatteryCare', advancedBatteryCare, [
+        [[0], 'congrats, battery dead'],
+        [[100], 'congrats, you cooked your battery'],
+        [[19], 'please connect charger'],
+        [[81], 'please unplug charger'],
+        [[20], 'your battery is at 20%'],
+        [[50], 'your battery is at 50%'],
+        [[80], 'your battery is at 80%'],
+      ])
+      runTests('CHALLENGE 5 - timeConverter', timeConverter, [
+        [[56828], "15:47:08"],
+        [[0], "00:00:00"],
+        [[1], "00:00:01"],
+        [[59], "00:00:59"],
+        [[60], "00:01:00"],
+        [[119], "00:01:59"],
+        [[120], "00:02:00"],
+        [[3599], "00:59:59"],
+        [[86399], "23:59:59"],
+      ])
+      runTests('CHALLENGE 6 - rockPaperScissors', rockPaperScissors, [
+        [['x', 'y'], "both tools invalid"],
+        [['x', 'paper'], "x not a valid tool"],
+        [['rock', 'y'], "y not a valid tool"],
+        [['rock', 'rock'], "rock VS. rock is a draw!"],
+        [['paper', 'paper'], "paper VS. paper is a draw!"],
+        [['scissors', 'scissors'], "scissors VS. scissors is a draw!"],
+        [['rock', 'scissors'], "rock beats scissors!"],
+        [['paper', 'rock'], "paper beats rock!"],
+        [['scissors', 'paper'], "scissors beats paper!"],
+        [['scissors', 'rock'], "rock beats scissors!"],
+        [['rock', 'paper'], "paper beats rock!"],
+        [['paper', 'scissors'], "scissors beats paper!"],
+      ])
+      console.log('\nCHALLENGE 7 does not have auto tests')
+      function runTests(testName, func, tests) {
+        let results = []
+        tests.forEach(test => {
+          const argsList = test[0]
+          const expected = JSON.stringify(test[1])
+          const actual = JSON.stringify(func.apply(null, argsList))
+          results.push([argsList, expected, actual])
+        })
+        console.log('\n' + testName)
+        if (results.every(result => result[1] === result[2])) console.log('\t✅ All tests pass')
+        else if (results.every(result => result[1] !== result[2])) console.log('\t❌ All tests fail')
+        else results.forEach((result, idx) => {
+          if (result[1] === result[2]) console.log(`\t✅ Test ${idx + 1} passes`)
+          else console.log(`\t❌ Test ${idx + 1} fails: ${func.name}(${result[0]
+            .map(JSON.stringify)}) should return ${result[1]} but returns ${result[2]}`)
+        })
+      }
+      setInterval(() => {
+        try {
+          const date = new Date
+          const secs = date.getSeconds() + (60 * date.getMinutes()) + (60 * 60 * date.getHours())
+          time.textContent = timeConverter(secs)
+        } catch { }
+      }, 1000)
       const game = (tool1, tool2, message) => () => {
         message.textContent = rockPaperScissors(tool1.value.trim(), tool2.value.trim())
       }
