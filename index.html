@@ -231,11 +231,13 @@
       const game = (tool1, tool2, message) => () => {
         message.textContent = rockPaperScissors(tool1.value.trim(), tool2.value.trim())
       }
-      inputTool1.oninput = game(inputTool1, inputTool2, rps)
-      inputTool2.oninput = game(inputTool1, inputTool2, rps)
-      sliderBattery.onchange = () => {
-        infoBattery.textContent = advancedBatteryCare(Number(sliderBattery.value))
-      }
+      try {
+        inputTool1.oninput = game(inputTool1, inputTool2, rps)
+        inputTool2.oninput = game(inputTool1, inputTool2, rps)
+        sliderBattery.onchange = () => {
+          infoBattery.textContent = advancedBatteryCare(Number(sliderBattery.value))
+        }
+      } catch { }
     } catch (err) { console.error(err.stack) }
   </script>
 </body>
