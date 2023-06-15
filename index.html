@@ -46,6 +46,7 @@
     // ❗ Functions are scaffolded for you, but are missing their parameters and bodies
     // ❗ Do not rename the functions provided, and do not create any other script tags
     // ❗ Debug properly using the Console
+    // ❗ "Edge cases" are additional requirements that ensure the function executes properly in all cases
 
     // 👉 CHALLENGE 1
     function concatenator() {
@@ -53,8 +54,8 @@
       //    * If a and b are strings, return them concatenated
       //    * If a and b are numbers, return their sum
       // 🧠 Edge cases:
-      //    * Both a and b must be of the same type (use typeof). Else return the string "a and b must be of the same type"
-      //    * a and b can be either numbers or strings. Else return "a and b must be numbers or strings"
+      //    * Both a and b must be of the same type (use typeof). If not, return the string "a and b must be of the same type"
+      //    * a and b can be either numbers or strings. If not, return "a and b must be numbers or strings"
     }
 
     // 👉 CHALLENGE 2
@@ -72,9 +73,9 @@
       //    * If any angle is over 90 degrees, return the string "this is an obtuse triangle"
       //    * If all angles are under 90 degrees, return the string "this is an acute triangle"
       // 🧠 Edge cases:
-      //    * All angles must be of type number. Else return the string "all angles must be numbers"
-      //    * All angles must be greater than zero. Else return the string "all angles must be greater than zero"
-      //    * The three angles must add up to 180. Else return the string "angles must total 180"
+      //    * All angles must be of type number. If not, return the string "all angles must be numbers"
+      //    * All angles must be greater than zero. If not, return the string "all angles must be greater than zero"
+      //    * The three angles must add up to 180. If not, return the string "angles must total 180"
     }
 
     // 👉 CHALLENGE 4
@@ -96,21 +97,25 @@
       //      timeConverter(119) // returns the string "00:01:59"
       //      timeConverter(86399) // returns the string "23:59:59"
       // ❗ Hint: you will need to calculate remainders with the modulo operator
-      // ❗ Hint: it will be useful to remove the decimal parts of some results: Math.floor(121 / 60) returns 2
-      // ❗ Hint: obtain hours like so: seconds divided by number of seconds in one hour, and then removing the decimal part
+      // ❗ Hint: it will be useful to remove the decimal parts of some results.
+      //          You can remove decimals by calling the function Math.floor which takes one number as an argument
+      //          and rounds it down to the nearest whole number. e.g. 121/60 = 2.016; Math.floor(2.016) returns 2
+      // ❗ Hint: obtain hours like so: take the seconds that are passed in and divide them by the
+      //          number of seconds in one hour (3,600). Then remove the decimal part.
     }
 
     // 👉 CHALLENGE 6
     function rockPaperScissors() {
       // 🧠 rockPaperScissors takes two arguments tool1 and tool2 which are strings,
       //    and the desired values for these strings are 'rock' or 'paper' or 'scissors'
-      //    * If tool1 beats tool2, return the string "<tool1> beats <tool2>!", E.G. "rock beats scissors!"
-      //    * If tool2 beats tool1, return the string "<tool2> beats <tool1>!", E.G. "rock beats scissors!"
-      //    * If it's a draw, return the string "<tool> VS. <tool> is a draw!", E.G. "rock VS. rock is a draw!"
+      //    * In the folloiwng examples, {tool1}, {tool2}, and {tool} should be replaced with either rock, paper, or scissors.
+      //    * If tool1 beats tool2, return the string "{tool1} beats {tool2}!", E.G. "rock beats scissors!"
+      //    * If tool2 beats tool1, return the string "{tool2} beats {tool1}!", E.G. "rock beats scissors!"
+      //    * If it's a draw, return the string "{tool} VS. {tool} is a draw!", E.G. "rock VS. rock is a draw!"
       // 🧠 Edge cases:
       //    Tools can be invalid in two ways: either one or both are not 'rock', 'paper' or 'scissors'
       //    * If both tools are invalid, return the string "both tools invalid"
-      //    * If one tool is invalid, return the string "<tool> not a valid tool", E.G. "ROCK not a valid tool"
+      //    * If one tool is invalid, return the string "{tool} not a valid tool", E.G. "ROCK not a valid tool"
     }
 
     // 👉 CHALLENGE 7
