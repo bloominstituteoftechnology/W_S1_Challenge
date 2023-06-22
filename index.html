@@ -40,27 +40,30 @@
   <!-- widgets end -->
 
   <script id="challenge">
-    // In CHALLENGES 1-6 you will write JavaScript functions
-    // In CHALLENGE 7 you will edit the HTML to add some missing id attributes
+    // In CHALLENGES 1-6 you will write JavaScript functions.
+    // In CHALLENGE 7 you will edit the HTML to add some missing id attributes.
 
-    // ❗ Functions are scaffolded for you, but are missing their parameters and bodies
-    // ❗ Do not rename the functions provided, and do not create any other script tags
-    // ❗ Debug properly using the Console
-    // ❗ "Edge cases" are additional requirements that ensure the function executes properly in all cases
+    // ❗ Each function is already scaffolded for you. You will need to fill in each function's parameters and body.
+    // ❗ Do not rename the functions provided, and do not create any other script tags.
+    // ❗ As you go through each challenge, load this file in the browser and debug using the Console.
+    // ❗ All challenges that returns strings must return the EXACT string given in the instructions to pass.
 
     // 👉 CHALLENGE 1
     function concatenator() {
-      // 🧠 concatenator takes two arguments a and b:
+      // 🧠 concatenator takes two parameters named a and b:
       //    * If a and b are strings, return them concatenated
       //    * If a and b are numbers, return their sum
-      // 🧠 Edge cases:
-      //    * Both a and b must be of the same type (use typeof). If not, return the string "a and b must be of the same type"
-      //    * a and b can be either numbers or strings. If not, return "a and b must be numbers or strings"
+      // 💡 Other conditions that must be met:
+      //    * Both a and b must be of the same type. If they are not the same type, return the string "a and b must be of the same type"
+      //    * a and b can be either numbers or strings. If they are not, return "a and b must be numbers or strings"
+      // ❗ Hint: The order of the conditions in the pseudo-code above and in the actual code is not necessarily the same
+      // ❗ Hint: It's advised to deal with the other conditions first, like arguments being of the wrong type.
+      //          In the real world, these are considered "edge cases".
     }
 
     // 👉 CHALLENGE 2
     function falsinessDetector() {
-      // 🧠 falsinessDetector takes five arguments a, b, c, d and e which are values of any type:
+      // 🧠 falsinessDetector takes five parameters named a, b, c, d, and e which are values of any type:
       //    * If some values are truthy and some falsy, return the string "some values truthy and some falsy"
       //    * If all values are falsy, return the string "all values falsy"
       //    * If all values are truthy, return the string "all values truthy"
@@ -68,19 +71,22 @@
 
     // 👉 CHALLENGE 3
     function triangleAnalyzer() {
-      // 🧠 triangleAnalyzer takes three arguments angleA, angleB and angleC:
+      // 🧠 triangleAnalyzer takes three parameters named angleA, angleB, and angleC:
       //    * If any angle is 90 degrees, return the string "this is a right triangle"
       //    * If any angle is over 90 degrees, return the string "this is an obtuse triangle"
       //    * If all angles are under 90 degrees, return the string "this is an acute triangle"
-      // 🧠 Edge cases:
+      // 💡 Other conditions that must be met:
       //    * All angles must be of type number. If not, return the string "all angles must be numbers"
       //    * All angles must be greater than zero. If not, return the string "all angles must be greater than zero"
       //    * The three angles must add up to 180. If not, return the string "angles must total 180"
+      // ❗ Hint: the order of the conditions in the pseudo-code above and in the actual code is not necessarily the same
+      // ❗ Hint: It's advised to deal with the other conditions first, like arguments being of the wrong type.
+      //          In the real world, these are considered "edge cases".
     }
 
     // 👉 CHALLENGE 4
     function advancedBatteryCare() {
-      // 🧠 advancedBatteryCare takes a percentage as its argument, expressed as a number between 0 and 100 inclusive:
+      // 🧠 advancedBatteryCare takes parameter named percentage that will be a number between 0 and 100 inclusive:
       //    * If percentage in the range between 20 and 80 inclusive (E.G. 47), return a string like "your battery is at 47%"
       //    * If percentage over 80, return the string "please unplug charger"
       //    * If percentage under 20, return the string "please connect charger"
@@ -90,7 +96,7 @@
 
     // 👉 CHALLENGE 5
     function timeConverter() {
-      // 🧠 timeConverter takes a single argument called seconds which can range between 0 and 86399 (a full day)
+      // 🧠 timeConverter takes a single parameter named seconds which can range between 0 and 86399 (a full day)
       //    and returns a string in the hh:mm:ss format. Examples of use:
       //      timeConverter(0) // returns the string "00:00:00"
       //      timeConverter(1) // returns the string "00:00:01"
@@ -106,16 +112,19 @@
 
     // 👉 CHALLENGE 6
     function rockPaperScissors() {
-      // 🧠 rockPaperScissors takes two arguments tool1 and tool2 which are strings,
+      // 🧠 rockPaperScissors takes two parameters named tool1 and tool2 which are strings,
       //    and the desired values for these strings are 'rock' or 'paper' or 'scissors'
       //    * In the folloiwng examples, {tool1}, {tool2}, and {tool} should be replaced with either rock, paper, or scissors.
       //    * If tool1 beats tool2, return the string "{tool1} beats {tool2}!", E.G. "rock beats scissors!"
       //    * If tool2 beats tool1, return the string "{tool2} beats {tool1}!", E.G. "rock beats scissors!"
       //    * If it's a draw, return the string "{tool} VS. {tool} is a draw!", E.G. "rock VS. rock is a draw!"
-      // 🧠 Edge cases:
+      // 💡 Other conditions that must be met:
       //    Tools can be invalid in two ways: either one or both are not 'rock', 'paper' or 'scissors'
       //    * If both tools are invalid, return the string "both tools invalid"
       //    * If one tool is invalid, return the string "{tool} not a valid tool", E.G. "ROCK not a valid tool"
+      // ❗ Hint: The order of the conditions in the pseudo-code above and in the actual code is not necessarily the same
+      // ❗ Hint: It's advised to deal with the other conditions first, like if either tool is invalid
+      //          In the real world, these are considered "edge cases".
     }
 
     // 👉 CHALLENGE 7
