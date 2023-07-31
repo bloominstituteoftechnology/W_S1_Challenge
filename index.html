@@ -27,21 +27,11 @@
     <input type="range" min="0" max="100" value="50">
     <div>your battery is at 50%</div>
   </section>
-  <section class="widget">
-    <p>This widget uses the timeConverter function</p>
-    <div>00:00:00</div>
-  </section>
-  <section class="widget">
-    <p>This widget uses the rockPaperScissors function</p>
-    <input />
-    <input />
-    <div>type your tools...</div>
-  </section>
   <!-- widgets end -->
 
   <script id="challenge">
-    // In CHALLENGES 1-6 you will write JavaScript functions.
-    // In CHALLENGE 7 you will edit the HTML to add some missing id attributes.
+    // In CHALLENGES 1-4 you will write JavaScript functions.
+    // In CHALLENGE 5 you will edit the HTML to add some missing id attributes.
 
     // ❗ Each function is already scaffolded for you. You will need to fill in each function's parameters and body.
     // ❗ Do not rename the functions provided, and do not create any other script tags.
@@ -95,56 +85,21 @@
     }
 
     // 👉 CHALLENGE 5
-    function timeConverter() {
-      // 🧠 timeConverter takes a single argument named seconds which can range between 0 and 86399 (a full day)
-      //    and returns a string in the hh:mm:ss format. Examples of use:
-      //      timeConverter(0) // returns the string "00:00:00"
-      //      timeConverter(1) // returns the string "00:00:01"
-      //      timeConverter(119) // returns the string "00:01:59"
-      //      timeConverter(86399) // returns the string "23:59:59"
-      // ❗ Hint: you will need to calculate remainders with the modulo operator
-      // ❗ Hint: it will be useful to remove the decimal parts of some results.
-      //          You can remove decimals by calling the function Math.floor which takes one number as an argument
-      //          and rounds it down to the nearest whole number. e.g. 121/60 = 2.016; Math.floor(2.016) returns 2
-      // ❗ Hint: obtain hours like so: take the seconds that are passed in and divide them by the
-      //          number of seconds in one hour (3,600). Then remove the decimal part.
-    }
-
-    // 👉 CHALLENGE 6
-    function rockPaperScissors() {
-      // 🧠 rockPaperScissors takes two arguments named tool1 and tool2 which are strings,
-      //    and the desired values for these strings are 'rock' or 'paper' or 'scissors'
-      //    * In the folloiwng examples, {tool1}, {tool2}, and {tool} should be replaced with either rock, paper, or scissors.
-      //    * If tool1 beats tool2, return the string "{tool1} beats {tool2}!", E.G. "rock beats scissors!"
-      //    * If tool2 beats tool1, return the string "{tool2} beats {tool1}!", E.G. "rock beats scissors!"
-      //    * If it's a draw, return the string "{tool} VS. {tool} is a draw!", E.G. "rock VS. rock is a draw!"
-      // 💡 Other conditions that must be met:
-      //    Tools can be invalid in two ways: either one or both are not 'rock', 'paper' or 'scissors'
-      //    * If both tools are invalid, return the string "both tools invalid"
-      //    * If one tool is invalid, return the string "{tool} not a valid tool", E.G. "ROCK not a valid tool"
-      // ❗ Hint: The order of the conditions in the pseudo-code above and in the actual code is not necessarily the same
-      // ❗ Hint: It's advised to deal with the other conditions first, like if either tool is invalid
-      //          In the real world, these are considered "edge cases".
-    }
-
-    // 👉 CHALLENGE 7
-    // 🧠 Three of the functions implemented above are being used to display some widgets on the web page
-    // However, six crucial HTML elements are missing an id attribute that would allow the JavaScript code to find them
-    // Visit the following website: `https://bloominstituteoftechnology.github.io/W_U1_S1_sprint_challenge/`
-    //    * Interact with the site to see the widgets in action
+    // 🧠 The advancedBatteryCare function implemented above is being used to display a widget on the web page
+    // However, some HTML elements are missing an id attribute that would allow the JavaScript code to find them
+    // Visit the following website: `https://bloominstituteoftechnology.github.io/W_U1_S1_sprint_challenge_v2/`
+    //    * Interact with the site to see the widget in action
     //    * Use Chrome Dev Tools/Elements tab to find the missing ids
-    //    * Add the missing ids to the corresponding HTML elements in this document and make the widgets work
+    //    * Add the missing ids to the corresponding HTML elements in this document and make the widget work
 
     // 🧪 TESTS, do not make any changes below this line ===================
     // 🧪 TESTS, do not make any changes below this line ===================
     // 🧪 TESTS, do not make any changes below this line ===================
-    globalThis.challengeVersion = 1
+    globalThis.challengeVersion = 2
     globalThis.concatenator = concatenator
     globalThis.falsinessDetector = falsinessDetector
     globalThis.triangleAnalyzer = triangleAnalyzer
     globalThis.advancedBatteryCare = advancedBatteryCare
-    globalThis.timeConverter = timeConverter
-    globalThis.rockPaperScissors = rockPaperScissors
 
     if (typeof module === 'undefined') {
       try {
@@ -190,32 +145,7 @@
           [[50], 'your battery is at 50%'],
           [[80], 'your battery is at 80%'],
         ])
-        runTests('CHALLENGE 5 - timeConverter', timeConverter, [
-          [[56828], "15:47:08"],
-          [[0], "00:00:00"],
-          [[1], "00:00:01"],
-          [[59], "00:00:59"],
-          [[60], "00:01:00"],
-          [[119], "00:01:59"],
-          [[120], "00:02:00"],
-          [[3599], "00:59:59"],
-          [[86399], "23:59:59"],
-        ])
-        runTests('CHALLENGE 6 - rockPaperScissors', rockPaperScissors, [
-          [['x', 'y'], "both tools invalid"],
-          [['x', 'paper'], "x not a valid tool"],
-          [['rock', 'y'], "y not a valid tool"],
-          [['rock', 'rock'], "rock VS. rock is a draw!"],
-          [['paper', 'paper'], "paper VS. paper is a draw!"],
-          [['scissors', 'scissors'], "scissors VS. scissors is a draw!"],
-          [['rock', 'scissors'], "rock beats scissors!"],
-          [['paper', 'rock'], "paper beats rock!"],
-          [['scissors', 'paper'], "scissors beats paper!"],
-          [['scissors', 'rock'], "rock beats scissors!"],
-          [['rock', 'paper'], "paper beats rock!"],
-          [['paper', 'scissors'], "scissors beats paper!"],
-        ])
-        console.log('\nCHALLENGE 7 does not have auto tests')
+        console.log('\nCHALLENGE 5 does not have auto tests')
         function runTests(testName, func, tests) {
           let results = []
           tests.forEach(test => {
@@ -233,19 +163,7 @@
               .map(JSON.stringify)}) should return ${result[1]} but returns ${result[2]}`)
           })
         }
-        setInterval(() => {
-          try {
-            const date = new Date
-            const secs = date.getSeconds() + (60 * date.getMinutes()) + (60 * 60 * date.getHours())
-            time.textContent = timeConverter(secs)
-          } catch { }
-        }, 1000)
-        const game = (tool1, tool2, message) => () => {
-          message.textContent = rockPaperScissors(tool1.value.trim(), tool2.value.trim())
-        }
         try {
-          inputTool1.oninput = game(inputTool1, inputTool2, rps)
-          inputTool2.oninput = game(inputTool1, inputTool2, rps)
           sliderBattery.onchange = () => {
             infoBattery.textContent = advancedBatteryCare(Number(sliderBattery.value))
           }
